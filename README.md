@@ -18,18 +18,13 @@ Easily use vector drawables, control step size (0.5, 1, etc.), switch icons at r
 
 ## 📦 Installation
 
-Add JitPack to your build.gradle (project level) or settings.gradle
+This library is available via **JitPack**.
 
+### 🔹 For Kotlin DSL (`build.gradle.kts`)
 
-# if buid.gradle:
-allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
-}
+1. In your root `settings.gradle.kts`:
 
-# if buid.gradle:
+```kotlin
 dependencyResolutionManagement {
     repositories {
         google()
@@ -37,5 +32,4 @@ dependencyResolutionManagement {
         maven(url = "https://jitpack.io")
     }
 }
-
 
