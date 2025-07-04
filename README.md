@@ -15,9 +15,11 @@ Easily use vector drawables, control step size (0.5 / 1), swap icons at runt
 - ✅ Runtime icon swap (`setIcons()`)
 - ✅ Read‑only mode (`isReadOnly = true`)
 - ✅ RTL + TalkBack ready
-- ✅ Tiny (~60 KB AAR, minified)
+- ✅ Ultra-lightweight (~9 KB AAR minified)
 
 ---
+
+![Preview](demo/preview.gif)
 
 ## 📦 Installation
 
@@ -81,7 +83,6 @@ dependencies {
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         app:iconEmpty="@drawable/ic_star_empty"
         app:iconFilled="@drawable/ic_star_filled"
         app:iconHalf="@drawable/ic_star_half"
@@ -89,9 +90,6 @@ dependencies {
         app:stepSize="0.5"
         app:readOnly="false"
         app:iconPadding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:maxRating="5"
         app:rating="3" />
 ~~~
@@ -106,7 +104,7 @@ ratingBar.maxRating   = 5
 ratingBar.isReadOnly = false
 
 // Listen for user changes
-ratingBar.setOnRatingBarChangeListener = { newRating ->
+ratingBar.setOnRatingBarChangeListener = { newRating ,_  ->
                 Log.d("TAG", "Rating: $newRating")
         }
 
@@ -118,7 +116,7 @@ ratingBar.setIcons(
 )
 ~~~
 
-If you skip `setIcons()`, built‑in yellow/gray star vectors are used automatically.
+If you skip `setIcons()`, and also skip `app:icon..` from XML than built‑in yellow/gray star vectors are used automatically.
 
 ---
 
