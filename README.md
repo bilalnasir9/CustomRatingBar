@@ -19,6 +19,8 @@ Easily use vector drawables, control step size (0.5 / 1), swap icons at runt
 
 ---
 
+## ▶️ Preview
+
 ![Preview](demo/preview.gif)
 
 ## 📦 Installation
