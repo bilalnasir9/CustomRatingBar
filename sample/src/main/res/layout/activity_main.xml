@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
+
 
     <com.github.bilalnasir9.library.ratingbar.CustomRatingBar
         android:id="@+id/ratingBar"
@@ -16,22 +17,22 @@
         app:iconEmpty="@drawable/ic_star_empty"
         app:iconFilled="@drawable/ic_star_filled"
         app:iconHalf="@drawable/ic_star_half"
-        app:iconSize="40dp"
-        app:stepSize="0.5"
-        app:readOnly="false"
         app:iconPadding="8dp"
+        app:iconSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxRating="5"
-        app:rating="3" />
+        app:rating="3.5"
+        app:readOnly="false"
+        app:stepSize="0.5" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_fivestars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/give_five_stars"
         android:layout_marginTop="32dp"
-        android:id="@+id/btn_fivestars"
+        android:text="@string/give_five_stars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
