@@ -1,7 +1,7 @@
 package com.github.bilalnasir9.customratingbar
 
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,15 +23,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.ratingBar.setOnRatingBarChangeListener = { newRating, fromUser ->
+        binding.ratingBar.setOnRatingBarChangeListener = { newRating ,_ ->
+                Log.d("TAG", "Rating: $newRating")
         }
-        binding.btnGetrating.setOnClickListener {
-            Toast.makeText(
-                this,
-                "User picked ${binding.ratingBar.rating} stars", Toast.LENGTH_SHORT
-            ).show()
-
-            binding.ratingBar.rating=4.5f
+        binding.btnFivestars.setOnClickListener {
+            binding.ratingBar.rating = 5f
         }
 
 //        binding.ratingBar.setIcons(
@@ -40,9 +36,7 @@ class MainActivity : AppCompatActivity() {
 //            half   = R.drawable.ic_star_half
 //        )
 
-
-//        binding.ratingBar.rating(4.5f)
-//        val current = binding.ratingBar.getRating()
+//        val getRating = binding.ratingBar.rating
 
     }
 }

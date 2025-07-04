@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CustomRatingBar</string>
+    <string name="give_five_stars">Give five stars</string>
 </resources>

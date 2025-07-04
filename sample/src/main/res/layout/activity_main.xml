@@ -17,7 +17,7 @@
         app:iconFilled="@drawable/ic_star_filled"
         app:iconHalf="@drawable/ic_star_half"
         app:iconSize="40dp"
-        app:stepSize="1"
+        app:stepSize="0.5"
         app:readOnly="false"
         app:iconPadding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,12 +26,12 @@
         app:maxRating="5"
         app:rating="3" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="get rating"
+        android:text="@string/give_five_stars"
         android:layout_marginTop="32dp"
-        android:id="@+id/btn_getrating"
+        android:id="@+id/btn_fivestars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
