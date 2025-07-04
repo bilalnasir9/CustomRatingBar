@@ -2,7 +2,7 @@
 
 A fully‑customizable, lightweight `RatingBar` replacement for Android, written in Kotlin.
 
-Easily use vector drawables, control step size (0.5 / 0.25 / …), swap icons at runtime, and handle user rating changes with a clean API.
+Easily use vector drawables, control step size (0.5 / 1), swap icons at runtime, and handle user rating changes with a clean API.
 
 [![](https://jitpack.io/v/bilalnasir9/CustomRatingBar.svg)](https://jitpack.io/#bilalnasir9/CustomRatingBar)
 
@@ -13,7 +13,7 @@ Easily use vector drawables, control step size (0.5 / 0.25 / …), swap 
 - ✅ Vector drawable support (SVG‑friendly)
 - ✅ Partial ratings via `stepSize`
 - ✅ Runtime icon swap (`setIcons()`)
-- ✅ Read‑only mode (`isIndicator = true`)
+- ✅ Read‑only mode (`isReadOnly = true`)
 - ✅ RTL + TalkBack ready
 - ✅ Tiny (~60 KB AAR, minified)
 
@@ -22,7 +22,7 @@ Easily use vector drawables, control step size (0.5 / 0.25 / …), swap 
 ## 📦 Installation
 
 CustomRatingBar is on **JitPack**.  
-Pick the snippet that matches your build setup and replace **`YOUR_GITHUB_USERNAME`** with your own handle.
+Pick the snippet that matches your build setup:
 
 ### Kotlin DSL (`build.gradle.kts`)
 
@@ -42,7 +42,7 @@ dependencyResolutionManagement {
 
 ~~~kotlin
 dependencies {
-    implementation("com.github.YOUR_GITHUB_USERNAME:custom-ratingbar:1.0.0")
+	 implementation("com.github.bilalnasir9:CustomRatingBar:1.0.0")
 }
 ~~~
 
@@ -66,7 +66,7 @@ allprojects {
 
 ~~~groovy
 dependencies {
-    implementation 'com.github.YOUR_GITHUB_USERNAME:custom-ratingbar:1.0.0'
+	   implementation 'com.github.bilalnasir9:CustomRatingBar:1.0.0'
 }
 ~~~
 
@@ -77,14 +77,23 @@ dependencies {
 ### XML
 
 ~~~xml
-<com.bilal.customratingbar.CustomRatingBar
-    android:id="@+id/ratingBar"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:maxRating="5"
-    app:rating="3.5"
-    app:stepSize="0.5"
-    app:isIndicator="false" />
+<com.github.bilalnasir9.library.ratingbar.CustomRatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:iconEmpty="@drawable/ic_star_empty"
+        app:iconFilled="@drawable/ic_star_filled"
+        app:iconHalf="@drawable/ic_star_half"
+        app:iconSize="40dp"
+        app:stepSize="0.5"
+        app:readOnly="false"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxRating="5"
+        app:rating="3" />
 ~~~
 
 ### Kotlin / Java
@@ -94,20 +103,18 @@ dependencies {
 ratingBar.rating      = 4.0f
 ratingBar.stepSize    = 0.5f
 ratingBar.maxRating   = 5
-ratingBar.isIndicator = false
+ratingBar.isReadOnly = false
 
 // Listen for user changes
-ratingBar.onRatingChanged = { value, fromUser ->
-    if (fromUser) {
-        Toast.makeText(this, "User picked $value stars", Toast.LENGTH_SHORT).show()
-    }
-}
+ratingBar.setOnRatingBarChangeListener = { newRating ->
+                Log.d("TAG", "Rating: $newRating")
+        }
 
 // Swap icons at runtime (optional)
 ratingBar.setIcons(
-    filled = R.drawable.ic_crb_star_filled,
-    empty  = R.drawable.ic_crb_star_empty,
-    half   = R.drawable.ic_crb_star_half   // optional
+    filled = R.drawable.ic_star_filled,
+    empty  = R.drawable.ic_star_empty,
+    half   = R.drawable.ic_star_half   // optional
 )
 ~~~
 
@@ -122,7 +129,7 @@ If you skip `setIcons()`, built‑in yellow/gray star vectors are used automatic
 | `rating`             | Float     | `0f`    | Current rating value                        |
 | `maxRating`          | Int       | `5`     | Number of stars/icons                       |
 | `stepSize`           | Float     | `1f`    | Smallest increment (e.g. `0.5`)             |
-| `isIndicator`        | Boolean   | `false` | `true` → read‑only                          |
+| `isReadOnly`        | Boolean   | `false` | `true` → read‑only                          |
 | `iconFilled`         | Drawable  | built‑in| Filled icon                                 |
 | `iconEmpty`          | Drawable  | built‑in| Empty icon                                  |
 | `iconHalf`           | Drawable  | built‑in| Half icon (optional)                        |
@@ -133,11 +140,10 @@ If you skip `setIcons()`, built‑in yellow/gray star vectors are used automatic
 
 ---
 
-## 🧪 Sample App
+## 🙋‍♂️ About Me
 
-Clone and run the demo:
+- 🧑‍💻 GitHub: [@bilalnasir9](https://github.com/bilalnasir9)  
+- 📧 Email: [bilalnasir6860@gmail.com](mailto:bilalnasir6860@gmail.com)
 
-```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/custom-ratingbar.git
-cd custom-ratingbar
-./gradlew :sample:installDebug
+Feel free to reach out, contribute, or suggest improvements.
+
