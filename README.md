@@ -21,6 +21,7 @@ Easily use vector drawables, control step size (0.5, 1, etc.), switch icons at r
 Add JitPack to your build.gradle (project level) or settings.gradle
 
 
+# if buid.gradle:
 allprojects {
 	repositories {
 		...
@@ -28,8 +29,7 @@ allprojects {
 	}
 }
 
-
-```kotlin
+# if buid.gradle:
 dependencyResolutionManagement {
     repositories {
         google()
@@ -37,3 +37,5 @@ dependencyResolutionManagement {
         maven(url = "https://jitpack.io")
     }
 }
+
+
