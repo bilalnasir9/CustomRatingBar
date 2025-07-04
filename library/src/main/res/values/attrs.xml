@@ -1,0 +1,13 @@
+<resources>
+    <declare-styleable name="CustomRatingBar">
+        <attr name="maxRating" format="integer"/>
+        <attr name="rating" format="float"/>
+        <attr name="iconFilled" format="reference"/>
+        <attr name="iconEmpty" format="reference"/>
+        <attr name="iconHalf" format="reference"/>
+        <attr name="iconSize" format="dimension"/>
+        <attr name="stepSize"     format="float" />
+        <attr name="readOnly"  format="boolean" />
+        <attr name="iconPadding" format="dimension" />
+    </declare-styleable>
+</resources>
