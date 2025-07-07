@@ -1,4 +1,4 @@
-# ⭐ CustomRatingBar
+# ⭐ CustomRatingBar - A Lightweight Library
 
 A fully‑customizable, lightweight `RatingBar` replacement for Android, written in Kotlin.
 
